@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "descripcion": "Directorio de servicios del edificio principal del Hospital Universitario Ramón y Cajal, transcrito de los tres esquemas de zonas publicados por el hospital en su Guía del paciente.",
+    "fuente": "https://www.comunidad.madrid/hospital/ramonycajal/guia-paciente/plano-general-situacion-0",
+    "archivos_origen": [
+      "https://www.comunidad.madrid/hospital/ramonycajal/sites/ramonycajal/files/2023-05/01.png (Izquierda)",
+      "https://www.comunidad.madrid/hospital/ramonycajal/sites/ramonycajal/files/2023-05/02.JPG (Centro)",
+      "https://www.comunidad.madrid/hospital/ramonycajal/sites/ramonycajal/files/2023-05/03.JPG (Derecha)"
+    ],
+    "transcrito": "2026-08",
+    "formato_entrada": ["bloque", "servicio", "habitaciones"],
+    "notas": [
+      "El servicio puede ser null cuando el plano oficial indica únicamente un rango de habitaciones en esa columna.",
+      "Confianza alta en el par (planta, zona): se lee directamente del esquema oficial.",
+      "Confianza media en el bloque A/B/C: el esquema oficial dispone cada zona en tres columnas sin rotularlas. Se han asociado a los bloques A (frente), B (intermedio) y C (fondo) siguiendo el orden de las columnas y la descripción del propio hospital, que sitúa en los controles C del fondo del edificio la mayoría de UCI y quirófanos. Hay excepciones observables en los propios datos, así que el bloque debe tomarse como orientativo.",
+      "Se ha corregido la errata 'Quirófanos de Ugencias' del plano oficial (sótano -2, Centro)."
+    ]
+  },
+
+  "zonas": {
+    "izquierda": {
+      "11": [
+        ["A", "Cirugía General y Digestivo", "1122 a 1136"],
+        ["B", "Ecografías de Digestivo"],
+        ["C", "Gastroenterología", "1101 y 1121 y 1138"]
+      ],
+      "10": [
+        ["A", "Cirugía General y Digestivo"],
+        ["B", null, "1001 a 1019"]
+      ],
+      "9": [
+        ["A", "Gastroenterología"],
+        ["B", "Quirófanos Cirugía General y Digestivo"],
+        ["C", "UVI Cirugía Abdominal"]
+      ],
+      "8": [
+        ["A", "Litotricia"],
+        ["B", "Quirófanos Urología - Ginecología"]
+      ],
+      "7": [
+        ["A", "Cirugía Infantil", "722 a 727"],
+        ["B", "Nefrología"],
+        ["C", "Urología", "707 a 719"]
+      ],
+      "6": [
+        ["A", "Cirugía Vascular", "601 a 621"],
+        ["B", "Urología", "622 a 632"],
+        ["C", "Andrología"]
+      ],
+      "5": [
+        ["A", "Cirugía Torácica", "520 a 526"],
+        ["B", "Neumología", "501 a 515"],
+        ["C", "Unidad de Trasplantes"]
+      ],
+      "4": [
+        ["A", "Instituto del Corazón"],
+        ["B", "Cardiología", "402 a 415 y 421 a 436"],
+        ["C", "Cirugía Cardíaca", "416 a 420 y 440 a 443"]
+      ],
+      "3": [
+        ["A", "Cardiología"],
+        ["A", "Ecocardiografía"],
+        ["B", "Cirugía Cardíaca"],
+        ["B", "Electrocardiografía Infantil"],
+        ["C", "Cirugía Cardíaca Pediátrica"],
+        ["C", "Ergometría Infantil"]
+      ],
+      "2": [
+        ["A", "Cardiología Infantil", "210 a 215"],
+        ["B", "Quirófanos Cirugía Cardíaca Infantil"],
+        ["C", "U.V.I. Cardiología Infantil y Pediatría"]
+      ],
+      "1": [
+        ["A", "Instituto de Enfermedades del Corazón"],
+        ["A", "Quirófanos Cirugía Vascular"],
+        ["A", "U.V.I. Cardiología y Cirugía Vascular"],
+        ["B", "Quirófanos Cirugía Cardíaca"],
+        ["B", "Unidad Coronaria", "101 a 113"],
+        ["C", "Quirófanos Cirugía Torácica"],
+        ["C", "Unidad de Arritmias"]
+      ],
+      "0": [
+        ["A", "Gestión"],
+        ["B", "Hemodinámica"],
+        ["C", "Radiodiagnóstico"]
+      ],
+      "S1": [
+        ["A", "Anatomía Patológica"],
+        ["A", "Inmunología"],
+        ["B", "Gastroenterología (Consultas)"],
+        ["B", "Microbiología"],
+        ["C", "Genética Médica"]
+      ],
+      "S2": [
+        ["A", "Electrocardiografía"],
+        ["B", "Rehabilitación"],
+        ["C", "Consultas Externas"]
+      ],
+      "S3": [
+        ["A", "Anatomía Patológica"],
+        ["A", "Donantes de Sangre"],
+        ["B", "Banco de Sangre"],
+        ["B", "Lencería"],
+        ["C", "Documentación y Archivo de Historias Clínicas"],
+        ["C", "Velatorios"]
+      ],
+      "S4": [
+        ["A", "Almacenes Generales"],
+        ["A", "Protección de Incendios"],
+        ["B", "Biomateriales"],
+        ["B", "Resonancia Magnética"],
+        ["C", "Electromedicina"]
+      ],
+      "S5": [
+        ["A", "Almacenes Generales"],
+        ["B", "Archivos"]
+      ]
+    },
+
+    "centro": {
+      "11": [
+        ["A", "Pediatría"],
+        ["B", "Unidad de Trasplantes UTMA"]
+      ],
+      "10": [
+        ["A", "Cirugía Maxilofacial", "1006 a 1009"],
+        ["A", "Cirugía Plástica", "1001 a 1005 y 1014"],
+        ["A", "Dermatología", "1010 a 1013"],
+        ["B", "Consulta Trasplante Hepático"],
+        ["C", "Consulta Trasplante de Riñón"]
+      ],
+      "9": [
+        ["A", "Cirugía General y Digestivo", "901 a 912"],
+        ["B", "Unidad de Cirugía Mayor Ambulatoria (U.C.M.A.)"]
+      ],
+      "8": [
+        ["A", "Dermatología"],
+        ["B", "Hematología", "801 a 811 y 842"],
+        ["C", "Psiquiatría", "818 a 829"]
+      ],
+      "7": [
+        ["A", "Nefrología"],
+        ["B", null, "701 a 714"]
+      ],
+      "6": [
+        ["A", "Cirugía Maxilofacial"],
+        ["B", "Coordinación de Trasplantes"],
+        ["C", "Docencia de Enfermería"]
+      ],
+      "5": [
+        ["A", "Unidad para el Estudio y Tratamiento del Dolor"],
+        ["B", "Unidad Multidisciplinaria Láser"],
+        ["C", "Reumatología"]
+      ],
+      "4": [
+        ["A", "Enfermedades Infecciosas", "411 a 418 y 433 a 436"],
+        ["B", "Neumología", "419 a 431"]
+      ],
+      "3": [
+        ["A", "Cirugía General y Digestivo", "322 a 332"],
+        ["B", "Traumatología", "301 a 321 y 334 a 337"]
+      ],
+      "2": [
+        ["A", "Electromiografía"],
+        ["A", "Traumatología", "201 a 250"],
+        ["B", "Medicina Preventiva"],
+        ["B", "Unidad de Imagen"],
+        ["C", "Protección Radiológica"]
+      ],
+      "1": [
+        ["A", "Quirófanos Traumatología"],
+        ["B", "Traumatología", "101 a 128"],
+        ["C", "Hospital de Día Quirúrgico"]
+      ],
+      "0": [
+        ["A", "Admisión de pacientes programados"],
+        ["A", "Control Financiero Permanente"],
+        ["A", "Salón de Actos"],
+        ["A", "Unidad de Patología Mamaria"],
+        ["B", "Cafetería"],
+        ["B", "Información"],
+        ["B", "Trabajadores Sociales"],
+        ["B", "Radiodiagnóstico"],
+        ["C", "Capilla"],
+        ["C", "Relaciones Públicas"],
+        ["C", "Ambulancias"]
+      ],
+      "S1": [
+        ["A", "Alergia Infantil (Consultas)"],
+        ["A", "Cardiología (Consultas)"],
+        ["A", "Farmacia - Dispensación ambulatoria de fármacos"],
+        ["A", "Trabajadores Sociales"],
+        ["B", "Bioquímica Clínica"],
+        ["B", "Citaciones Analítica"],
+        ["B", "Hematología (Consultas)"],
+        ["B", "Voluntariado"],
+        ["C", "Cafetería"],
+        ["C", "Extracciones Centrales"],
+        ["C", "Inmunología (Consultas)"]
+      ],
+      "S2": [
+        ["A", "Admisión"],
+        ["A", "Quirófanos de Urgencias"],
+        ["B", "Biblioteca"],
+        ["B", "Consultas Externas"],
+        ["C", "Citopunciones"]
+      ],
+      "S3": [
+        ["A", "Conserjería y Cartería"],
+        ["A", "Oncología Radioterápica"],
+        ["A", "Urgencias"],
+        ["B", "Cargos"],
+        ["B", "Radioquirófano"],
+        ["C", "Hospitalización Área de Braquiterapia"],
+        ["C", "Suministros y Compras"]
+      ],
+      "S4": [
+        ["A", "Almacenes Generales"],
+        ["B", "Limpieza"]
+      ],
+      "S5": [
+        ["A", "Almacenes Generales"],
+        ["B", "Archivos"]
+      ]
+    },
+
+    "derecha": {
+      "11": [
+        ["A", "Ginecología", "1105 a 1116"],
+        ["B", "Pediatría"],
+        ["C", "Unidad de Lactantes"]
+      ],
+      "10": [
+        ["A", "Endocrinología", "1016 a 1019 y 1025 a 1030"],
+        ["B", "Pediatría", "1001 a 1014"]
+      ],
+      "9": [
+        ["A", "Oftalmología (Consultas)"]
+      ],
+      "8": [
+        ["A", "Aislamiento Respiratorio", "801 a 810 y 820"],
+        ["B", "Oftalmología", "811 a 819"],
+        ["C", "Quirófanos"]
+      ],
+      "7": [
+        ["A", "Neurocirugía (Consultas)"],
+        ["B", "Neurología (Consultas)"],
+        ["C", "Neurocirugía (Consultas)"]
+      ],
+      "6": [
+        ["A", "Quirófanos Multidisciplinares"],
+        ["B", "U.V.I. de Neurocirugía"]
+      ],
+      "5": [
+        ["A", "Neurocirugía", "515 a 542"],
+        ["B", "Neurología", "501 a 514 y 543"]
+      ],
+      "4": [
+        ["A", "Medicina Interna"],
+        ["B", null, "401 a 442"]
+      ],
+      "3": [
+        ["A", "Alergia", "323 a 333"],
+        ["A", "O.R.L."],
+        ["B", "Cardiología"],
+        ["B", "Medicina Interna", "315 a 318 y 335 a 342"],
+        ["C", "Oncología Médica"],
+        ["C", "Reumatología", "301 a 314 y 343 a 344"]
+      ],
+      "2": [
+        ["A", "Alergia (Consultas)"],
+        ["B", "O.R.L. (Consultas)"],
+        ["C", "Nutrición y Dietética Hospitalaria"]
+      ],
+      "1": [
+        ["A", "O.R.L. Exploraciones"],
+        ["A", "Unidad de Cuidados Intensivos"],
+        ["A", "U.C.I. Médica"],
+        ["B", "Hospital de Día Médico"],
+        ["C", "Quirófanos O.R.L."]
+      ],
+      "0": [
+        ["A", "Atención al Paciente"],
+        ["A", "Dirección Médica"],
+        ["A", "Junta Técnico Asistencial"],
+        ["A", "Radiodiagnóstico"],
+        ["B", "Control de Gestión"],
+        ["B", "Docencia Médica"],
+        ["B", "Sala de Juntas"],
+        ["B", "Unidad de Calidad"],
+        ["C", "Dirección de Enfermería"],
+        ["C", "Gerencia"],
+        ["C", "Seguridad"]
+      ],
+      "S1": [
+        ["A", "Bioquímica"],
+        ["A", "Neurofisiología Clínica"],
+        ["B", "Investigación"],
+        ["B", "Preanestesia (Consultas)"],
+        ["C", "Medicina Interna (Consultas)"],
+        ["C", "Psiquiatría (Consultas)"]
+      ],
+      "S2": [
+        ["A", "Informática"],
+        ["A", "Virología"],
+        ["B", "Investigación"],
+        ["C", "Medicina Nuclear"]
+      ],
+      "S3": [
+        ["A", "Hostelería"],
+        ["B", "Farmacia"],
+        ["C", "Investigación"]
+      ],
+      "S4": [
+        ["A", "Almacenes Generales"],
+        ["B", "Control de Almacenes"],
+        ["C", "Recepción de Mercancías"]
+      ],
+      "S5": [
+        ["A", "Almacenes Generales"],
+        ["B", "Archivos"],
+        ["C", "Farmacia"],
+        ["C", "Farmacia - Recepción de Medicamentos"]
+      ]
+    }
+  }
+}
