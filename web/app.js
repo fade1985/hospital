@@ -311,8 +311,9 @@ function dibujarPlanta() {
       const rMedio = (r0 + r1) / 2;
       const centro = punto(uMedio, rMedio);
       const maxCaracteres = Math.max(11, Math.floor(arco(u0, u1, rMedio) / 3.2));
+      // El bloque C es menos profundo que A y B, así que le caben menos líneas.
+      const maxLineas = Math.max(3, Math.floor((r1 - r0 - 8) / 7.4));
       const lineas = [];
-      const maxLineas = 7;
       for (const entrada of entradas) {
         const partes = partirTexto(etiquetaServicio(entrada), maxCaracteres);
         if (lineas.length + partes.length > maxLineas) {
