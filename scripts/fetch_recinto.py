@@ -53,44 +53,55 @@ CONSULTA = """
 out geom;
 """
 
-# Elementos OSM que forman el recinto y que el visor rotula explicitamente.
-# Cada clave es "tipo/id" de OSM.
+# Elementos OSM del recinto que el visor destaca. Cada clave es "tipo/id" de OSM.
+#
+# Solo se identifica lo que OpenStreetMap nombra explicitamente. Urgencias y
+# Resonancia Magnetica no estan cartografiadas como edificios propios: quedan
+# dentro de la huella unica del edificio principal, asi que no se rotulan aqui.
+# Su posicion documentada figura en `edificios_anexos` de data/hospital.json.
 ANOTACIONES = {
     "relation/13037178": {
         "id": "edificio-principal",
         "nombre": "Edificio Principal",
         "categoria": "principal",
         "plantas": 18,
-    },
-    "way/394889264": {
-        "id": "urgencias",
-        "nombre": "Urgencias",
-        "categoria": "urgencias",
-    },
-    "way/394889265": {
-        "id": "anexo-posterior",
-        "nombre": "Anexo posterior",
-        "categoria": "anexo",
+        "rotular": True,
     },
     "way/968812172": {
         "id": "pabellon-docente",
         "nombre": "Pabellón Docente / Consultas Externas",
         "categoria": "docente",
+        "rotular": True,
     },
     "way/14665984": {
         "id": "apeadero",
         "nombre": "Apeadero de Cercanías Ramón y Cajal",
         "categoria": "transporte",
+        "rotular": True,
     },
     "way/712717531": {
         "id": "apeadero-acceso-3",
         "nombre": "Apeadero, acceso 3",
         "categoria": "transporte",
+        "rotular": False,
+    },
+    "way/394889264": {
+        "id": "anexo-este-1",
+        "nombre": "Edificio anexo al este (sin nombre en OpenStreetMap)",
+        "categoria": "anexo",
+        "rotular": False,
+    },
+    "way/394889265": {
+        "id": "anexo-este-2",
+        "nombre": "Edificio anexo al este (sin nombre en OpenStreetMap)",
+        "categoria": "anexo",
+        "rotular": False,
     },
     "way/394889262": {
         "id": "recinto",
         "nombre": "Recinto hospitalario",
         "categoria": "recinto",
+        "rotular": False,
     },
 }
 

@@ -126,69 +126,75 @@
     }
   ],
 
-  "edificios_anexos": [
-    {
-      "id": "urgencias",
-      "nombre": "Urgencias",
-      "color": "#d9534f",
-      "posicion_plano": "parte posterior del edificio principal",
-      "nota": "Conectado con el edificio principal. La atención de urgencias del edificio principal figura además en el sótano -3 centro.",
-      "fuente": "plano-situacion"
-    },
-    {
-      "id": "resonancia",
-      "nombre": "Resonancia Magnética",
-      "color": "#f7f7f5",
-      "posicion_plano": "parte posterior del hospital",
-      "fuente": "memoria-2019"
-    },
-    {
-      "id": "consultas-externas",
-      "nombre": "Consultas Externas y Pabellón Docente",
-      "color": "#9a9a9a",
-      "posicion_plano": "a la derecha de la fachada principal (noroeste real)",
-      "nota": "Comunicado con el edificio principal mediante túneles y espacios abiertos. Incluye Dietética, Nutrición y Rehabilitación Cardíaca.",
-      "fuente": "memoria-2019"
-    },
-    {
-      "id": "rehabilitacion",
-      "nombre": "Rehabilitación",
-      "color": "#f0b490",
-      "posicion_plano": "extremo del sector Izquierda",
-      "fuente": "plano-situacion"
-    },
-    {
-      "id": "banco-sangre",
-      "nombre": "Banco de Sangre",
-      "color": "#f0b490",
-      "posicion_plano": "junto al sector Izquierda",
-      "nota": "El Banco de Sangre figura también en el sótano -3 de la zona Izquierda.",
-      "fuente": "plano-situacion"
-    },
-    {
-      "id": "velatorios",
-      "nombre": "Velatorios",
-      "color": "#f0b490",
-      "posicion_plano": "lateral del sector Izquierda",
-      "nota": "Los velatorios figuran también en el sótano -3 de la zona Izquierda.",
-      "fuente": "plano-situacion"
-    },
-    {
-      "id": "central-termica",
-      "nombre": "Central telefónica y sala de máquinas",
-      "color": "#c9c4b8",
-      "posicion_plano": "a la izquierda del edificio principal (este real)",
-      "fuente": "memoria-2019"
-    },
-    {
-      "id": "apeadero",
-      "nombre": "Apeadero de Cercanías Ramón y Cajal",
-      "color": "#b0a08c",
-      "posicion_plano": "enfrente de la parte anterior del edificio",
-      "nota": "Línea C-4 de Cercanías Madrid, código de estación 97201.",
-      "fuente": "memoria-2019"
-    }
-  ],
+  "edificios_anexos": {
+    "nota": "OpenStreetMap no cartografía por separado Urgencias, Resonancia Magnética ni los pabellones menores: quedan dentro de la huella única del edificio principal. Por eso el visor no los dibuja como polígonos y se listan aquí con la posición que les asignan los documentos oficiales. La columna 'posición real' traduce la del plano oficial, que está dibujado con el norte hacia abajo.",
+    "listado": [
+      {
+        "id": "urgencias",
+        "nombre": "Urgencias",
+        "posicion_plano": "parte posterior del edificio principal",
+        "posicion_real": "al sur del edificio principal",
+        "detalle": "Conectado con el edificio principal. La atención de urgencias figura además en el sótano -3 de la zona Centro.",
+        "fuente": "plano-situacion"
+      },
+      {
+        "id": "resonancia",
+        "nombre": "Resonancia Magnética",
+        "posicion_plano": "parte posterior del hospital",
+        "posicion_real": "al sur del edificio principal",
+        "detalle": "Resonancia Magnética aparece también en el sótano -4 de la zona Izquierda.",
+        "fuente": "memoria-2019"
+      },
+      {
+        "id": "consultas-externas",
+        "nombre": "Consultas Externas y Pabellón Docente",
+        "posicion_plano": "a la derecha de la fachada principal",
+        "posicion_real": "al noroeste, cartografiado en OpenStreetMap",
+        "detalle": "Comunicado con el edificio principal por túneles y espacios abiertos. Incluye Dietética, Nutrición y Rehabilitación Cardíaca.",
+        "fuente": "memoria-2019"
+      },
+      {
+        "id": "rehabilitacion",
+        "nombre": "Rehabilitación",
+        "posicion_plano": "ala lateral del extremo del sector Izquierda",
+        "posicion_real": "extremo este del edificio principal",
+        "detalle": "Rehabilitación figura también en el sótano -2 de la zona Izquierda.",
+        "fuente": "plano-situacion"
+      },
+      {
+        "id": "banco-sangre",
+        "nombre": "Banco de Sangre",
+        "posicion_plano": "junto al sector Izquierda",
+        "posicion_real": "flanco este del edificio principal",
+        "detalle": "Aparece también en el sótano -3 de la zona Izquierda.",
+        "fuente": "plano-situacion"
+      },
+      {
+        "id": "velatorios",
+        "nombre": "Velatorios",
+        "posicion_plano": "lateral del sector Izquierda",
+        "posicion_real": "flanco este del edificio principal",
+        "detalle": "Aparecen también en el sótano -3 de la zona Izquierda.",
+        "fuente": "plano-situacion"
+      },
+      {
+        "id": "central-termica",
+        "nombre": "Central telefónica y sala de máquinas",
+        "posicion_plano": "a la izquierda del edificio principal",
+        "posicion_real": "al este, unos 190 m del edificio principal",
+        "detalle": "Coincide con los dos edificios sin nombre que OpenStreetMap sitúa al este del recinto.",
+        "fuente": "memoria-2019"
+      },
+      {
+        "id": "apeadero",
+        "nombre": "Apeadero de Cercanías Ramón y Cajal",
+        "posicion_plano": "enfrente de la parte anterior del edificio",
+        "posicion_real": "al norte, cartografiado en OpenStreetMap",
+        "detalle": "Línea C-4 de Cercanías Madrid, código de estación 97201.",
+        "fuente": "memoria-2019"
+      }
+    ]
+  },
 
   "geometria_planta": {
     "descripcion": "Parámetros del esquema de planta tipo. La planta se genera como un abanico de bandas radiales alrededor de un punto de fuga situado por delante de la fachada principal, que es la forma en la que se organiza el edificio en los planos oficiales. Las unidades son unidades SVG y guardan la proporción del plano oficial, no son cotas del proyecto.",

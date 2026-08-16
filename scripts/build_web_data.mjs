@@ -72,6 +72,7 @@ const ETIQUETAS_UTILES = new Set([
   "nombre",
   "categoria",
   "plantas",
+  "rotular",
   "building",
   "amenity",
   "highway",

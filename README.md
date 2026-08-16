@@ -12,6 +12,9 @@ Visor web estático con dos mapas del hospital (Carretera de Colmenar Viejo km 9
 Incluye buscador de servicios y de números de habitación, selector de planta, panel de detalle por
 bloque, zoom y arrastre, y descarga del mapa actual como SVG para reutilizarlo.
 
+El estado va en el fragmento de la URL, así que los enlaces son compartibles:
+`#recinto`, `#planta/8`, `#planta/S1/centro/B`.
+
 Los datos salen de los planos que el propio hospital publica en su Guía del paciente y de las
 memorias anuales del centro. El análisis de qué planos existen, cuáles no están publicados y por qué
 cauce se pueden solicitar está en **[`docs/planos-y-fuentes.md`](docs/planos-y-fuentes.md)**.

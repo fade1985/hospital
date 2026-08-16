@@ -2205,6 +2205,7 @@
     "id": "apeadero",
     "nombre": "Apeadero de Cercanías Ramón y Cajal",
     "categoria": "transporte",
+    "rotular": true,
     "xy": [
      [
       [
@@ -13138,6 +13139,7 @@
     "id": "recinto",
     "nombre": "Recinto hospitalario",
     "categoria": "recinto",
+    "rotular": false,
     "xy": [
      [
       [
@@ -13556,9 +13558,10 @@
    "properties": {
     "osm": "way/394889264",
     "building": "hospital",
-    "id": "urgencias",
-    "nombre": "Urgencias",
-    "categoria": "urgencias",
+    "id": "anexo-este-1",
+    "nombre": "Edificio anexo al este (sin nombre en OpenStreetMap)",
+    "categoria": "anexo",
+    "rotular": false,
     "xy": [
      [
       [
@@ -13665,9 +13668,10 @@
    "properties": {
     "osm": "way/394889265",
     "building": "hospital",
-    "id": "anexo-posterior",
-    "nombre": "Anexo posterior",
+    "id": "anexo-este-2",
+    "nombre": "Edificio anexo al este (sin nombre en OpenStreetMap)",
     "categoria": "anexo",
+    "rotular": false,
     "xy": [
      [
       [
@@ -18008,6 +18012,7 @@
     "id": "apeadero-acceso-3",
     "nombre": "Apeadero, acceso 3",
     "categoria": "transporte",
+    "rotular": false,
     "xy": [
      [
       [
@@ -18779,6 +18784,7 @@
     "id": "pabellon-docente",
     "nombre": "Pabellón Docente / Consultas Externas",
     "categoria": "docente",
+    "rotular": true,
     "xy": [
      [
       [
@@ -41215,6 +41221,7 @@
     "nombre": "Edificio Principal",
     "categoria": "principal",
     "plantas": 18,
+    "rotular": true,
     "xy": [
      [
       [

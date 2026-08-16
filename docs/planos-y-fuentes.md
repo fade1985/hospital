@@ -77,9 +77,19 @@ Datos clave que aportan:
 `scripts/fetch_recinto.py` descarga esta geometría vía Overpass API y la deja proyectada en metros
 en [`data/recinto.geojson`](../data/recinto.geojson).
 
-Limitación importante: en OpenStreetMap el edificio principal está dibujado como una única huella
-tosca (≈245 × 154 m) con dos patios interiores. **No refleja las alas en abanico** que sí se ven en
-los planos oficiales, así que sirve para la vista de recinto pero no para deducir la planta.
+Limitaciones importantes:
+
+- El edificio principal está dibujado como una única huella tosca (≈245 × 154 m) con dos patios
+  interiores. **No refleja las alas en abanico** que sí se ven en los planos oficiales, así que
+  sirve para la vista de recinto pero no para deducir la planta.
+- **Urgencias y Resonancia Magnética no están cartografiados como edificios propios**: quedan
+  absorbidos dentro de esa huella única. Por eso el visor no los dibuja como polígonos y se limita
+  a listarlos en el panel lateral con la posición que les asignan los documentos oficiales.
+- Los dos edificios que OSM sitúa unos 190 m al este del edificio principal no tienen nombre. Por
+  su posición corresponden a lo que las memorias describen como central telefónica y sala de
+  máquinas, «a la izquierda del edificio principal», pero al no estar confirmado se muestran sin
+  rótulo.
+
 Mejorar ese contorno en OSM sería, de hecho, la forma más útil de que este mapa gane precisión.
 
 ### 1.5 Ficha del edificio y bibliografía del proyecto original

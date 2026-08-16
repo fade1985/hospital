@@ -359,12 +359,13 @@ function dibujarPlanta() {
     );
   }
 
-  // Rótulos de bloque, fuera del abanico y con una guía radial hasta el borde.
+  // Rótulos de bloque, fuera del abanico y con una guía corta hasta el borde.
+  const descripcionBloque = { A: "frente", B: "intermedio", C: "fondo" };
   for (const bloque of BLOQUES) {
     const [r0, r1] = G.radios[bloque];
     const rMedio = (r0 + r1) / 2;
-    const desde = punto(1.03, rMedio);
-    const hasta = punto(1.11, rMedio);
+    const desde = punto(1.02, rMedio);
+    const hasta = punto(1.12, rMedio);
     capaTexto.appendChild(
       el("path", {
         d: `M${desde[0].toFixed(2)},${desde[1].toFixed(2)} L${hasta[0].toFixed(2)},${hasta[1].toFixed(2)}`,
@@ -373,13 +374,34 @@ function dibujarPlanta() {
         "stroke-dasharray": "2 2",
       }),
     );
-    const p = punto(1.18, rMedio);
     capaTexto.appendChild(
-      bloqueTexto([`Bloque ${bloque}`], p[0], p[1], 1.18 * G.apertura_grados, {
-        tamano: 7,
-        color: "#8a928b",
-        peso: 700,
-      }),
+      el(
+        "text",
+        {
+          x: hasta[0] + 4,
+          y: hasta[1],
+          "font-size": 7.5,
+          "font-weight": 700,
+          fill: "#8a928b",
+          "dominant-baseline": "middle",
+          class: "rotulo",
+        },
+        `Bloque ${bloque}`,
+      ),
+    );
+    capaTexto.appendChild(
+      el(
+        "text",
+        {
+          x: hasta[0] + 4,
+          y: hasta[1] + 8,
+          "font-size": 6,
+          fill: "#a6ada6",
+          "dominant-baseline": "middle",
+          class: "rotulo",
+        },
+        descripcionBloque[bloque],
+      ),
     );
   }
 
@@ -407,18 +429,18 @@ function dibujarPlanta() {
     });
   }
 
-  return { x: -260, y: 30, ancho: 650, alto: 350 };
+  return { x: -272, y: 30, ancho: 655, alto: 350 };
 }
 
 /* -- vista: recinto ------------------------------------------------------ */
 
 const COLOR_RECINTO = {
   "edificio-principal": "#f0b184",
-  urgencias: "#d9534f",
-  "anexo-posterior": "#f6f6f3",
   "pabellon-docente": "#9d9d97",
   apeadero: "#b7a894",
   "apeadero-acceso-3": "#b7a894",
+  "anexo-este-1": "#e4d9cc",
+  "anexo-este-2": "#e4d9cc",
 };
 
 function anillos(xy, tipo) {
@@ -491,7 +513,7 @@ function dibujarRecinto() {
       );
     }
 
-    if (destacado && f.id !== "anexo-posterior") {
+    if (f.rotular) {
       const puntos = rings.flat();
       const cx = puntos.reduce((s, p) => s + p[0], 0) / puntos.length;
       const cy = puntos.reduce((s, p) => s + p[1], 0) / puntos.length;
@@ -650,9 +672,9 @@ function pintarLeyenda() {
         ]
       : [
           { color: COLOR_RECINTO["edificio-principal"], texto: "Edificio principal" },
-          { color: COLOR_RECINTO.urgencias, texto: "Urgencias" },
           { color: COLOR_RECINTO["pabellon-docente"], texto: "Pabellón Docente y Consultas Externas" },
           { color: COLOR_RECINTO.apeadero, texto: "Apeadero de Cercanías" },
+          { color: COLOR_RECINTO["anexo-este-1"], texto: "Anexos al este", nota: "sin nombre en OSM" },
           { color: "#e0e0d8", texto: "Otras edificaciones del entorno" },
           { color: "#eaf0e4", texto: "Parcela hospitalaria" },
         ];
@@ -681,11 +703,31 @@ function pintarDetalle() {
   cuerpo.textContent = "";
 
   if (estado.vista === "recinto") {
-    const p = document.createElement("p");
-    p.className = "detalle__vacio";
-    p.textContent =
-      "Vista georreferenciada del recinto, con el norte arriba. Pasa el cursor por encima de los edificios para ver su nombre y cambia a la vista de plantas para consultar los servicios.";
-    cuerpo.append(p);
+    const intro = document.createElement("p");
+    intro.className = "detalle__vacio";
+    intro.textContent =
+      "Vista georreferenciada con el norte arriba. Pasa el cursor por encima de los edificios para ver su nombre.";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = "Edificios y anexos";
+    titulo.style.marginTop = "12px";
+
+    const lista = document.createElement("ul");
+    for (const anexo of D.hospital.edificios_anexos.listado) {
+      const li = document.createElement("li");
+      li.textContent = anexo.nombre;
+      const donde = document.createElement("span");
+      donde.className = "detalle__habitaciones";
+      donde.textContent = ` · ${anexo.posicion_real}`;
+      li.append(donde);
+      lista.append(li);
+    }
+
+    const aviso = document.createElement("p");
+    aviso.className = "detalle__aviso";
+    aviso.textContent = D.hospital.edificios_anexos.nota;
+
+    cuerpo.append(intro, titulo, lista, aviso);
     return;
   }
 
@@ -797,6 +839,35 @@ function pintarResultados(consulta) {
   }
 }
 
+/* -- enlaces permanentes (#recinto, #planta/S2/centro/B) ----------------- */
+
+let ignorarHash = false;
+
+function escribirHash() {
+  const partes =
+    estado.vista === "recinto"
+      ? ["recinto"]
+      : ["planta", estado.planta, estado.seleccion?.zona, estado.seleccion?.bloque];
+  const hash = "#" + partes.filter(Boolean).join("/");
+  if (hash === location.hash) return;
+  ignorarHash = true;
+  history.replaceState(null, "", hash);
+  ignorarHash = false;
+}
+
+function leerHash() {
+  const [vista, planta, zona, bloque] = decodeURIComponent(location.hash.slice(1)).split("/");
+  if (vista === "recinto") {
+    estado.vista = "recinto";
+    return true;
+  }
+  if (vista !== "planta" || !PLANTAS.some((p) => p.id === planta)) return false;
+  estado.vista = "planta";
+  estado.planta = planta;
+  estado.seleccion = ZONAS.has(zona) && BLOQUES.includes(bloque) ? { zona, bloque } : null;
+  return true;
+}
+
 /* -- orquestación -------------------------------------------------------- */
 
 function redibujar({ conservarEncuadre = false } = {}) {
@@ -818,6 +889,7 @@ function redibujar({ conservarEncuadre = false } = {}) {
   $("#btn-viales").hidden = estado.vista !== "recinto";
   pintarLeyenda();
   pintarDetalle();
+  escribirHash();
 }
 
 function seleccionar(zona, bloque) {
@@ -865,13 +937,26 @@ function descargarSVG() {
 }
 
 function iniciar() {
+  leerHash();
   pintarSelectorPlantas();
   redibujar();
   activarInteraccion();
 
   for (const boton of document.querySelectorAll(".vistas button")) {
+    boton.classList.toggle("es-activo", boton.dataset.vista === estado.vista);
     boton.addEventListener("click", () => cambiarVista(boton.dataset.vista));
   }
+
+  window.addEventListener("hashchange", () => {
+    if (ignorarHash) return;
+    if (!leerHash()) return;
+    estado.encuadre = null;
+    pintarSelectorPlantas();
+    for (const boton of document.querySelectorAll(".vistas button")) {
+      boton.classList.toggle("es-activo", boton.dataset.vista === estado.vista);
+    }
+    redibujar();
+  });
 
   $("#buscador").addEventListener("input", (ev) => pintarResultados(ev.target.value));
   $("#btn-encajar").addEventListener("click", () => aplicarEncuadre({ ...encuadreInicial }));
