@@ -1,0 +1,9 @@
+# Imagenes de los planos oficiales: se descargan con
+# scripts/descargar_planos_oficiales.sh y no se redistribuyen aqui.
+planos/
+
+# Volcados intermedios de Overpass
+*.overpass.json
+
+node_modules/
+.DS_Store

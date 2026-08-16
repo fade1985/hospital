@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mapa 2D · Hospital Universitario Ramón y Cajal</title>
+    <meta
+      name="description"
+      content="Mapa 2D interactivo del Hospital Universitario Ramón y Cajal: recinto georreferenciado y esquema de las 17 plantas con sus servicios."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6b52'/%3E%3Cpath d='M13.5 6h5v7.5H26v5h-7.5V26h-5v-7.5H6v-5h7.5z' fill='%23fff'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <header class="cabecera">
+      <div class="cabecera__titulo">
+        <h1>Hospital Universitario Ramón y Cajal</h1>
+        <p>Mapa 2D del recinto y de las 17 plantas del edificio principal</p>
+      </div>
+      <nav class="vistas" aria-label="Cambiar de vista">
+        <button type="button" data-vista="planta" class="es-activo">Plantas</button>
+        <button type="button" data-vista="recinto">Recinto</button>
+      </nav>
+    </header>
+
+    <main class="disposicion">
+      <aside class="panel" aria-label="Controles y detalles">
+        <section class="panel__bloque">
+          <label class="buscador">
+            <span class="buscador__etiqueta">Buscar servicio o habitación</span>
+            <input
+              type="search"
+              id="buscador"
+              placeholder="cardiología, quirófanos, 315…"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </label>
+          <ul id="resultados" class="resultados" hidden></ul>
+        </section>
+
+        <section class="panel__bloque" id="selector-plantas">
+          <h2>Planta</h2>
+          <div class="plantas" id="plantas" role="radiogroup" aria-label="Seleccionar planta"></div>
+          <p class="pista">Usa ↑ y ↓ para recorrer las plantas.</p>
+        </section>
+
+        <section class="panel__bloque" id="detalle">
+          <h2>Detalle</h2>
+          <div id="detalle-cuerpo" class="detalle">
+            <p class="detalle__vacio">
+              Pulsa un bloque del plano para ver todos los servicios que alberga.
+            </p>
+          </div>
+        </section>
+
+        <section class="panel__bloque">
+          <h2>Leyenda</h2>
+          <ul class="leyenda" id="leyenda"></ul>
+        </section>
+      </aside>
+
+      <section class="lienzo">
+        <div class="lienzo__barra">
+          <span id="titulo-vista" class="lienzo__titulo"></span>
+          <div class="lienzo__acciones">
+            <button type="button" id="btn-viales" class="es-activo" hidden>Viales</button>
+            <button type="button" id="btn-encajar">Encajar</button>
+            <button type="button" id="btn-descargar">Descargar SVG</button>
+          </div>
+        </div>
+        <div class="lienzo__marco" id="marco">
+          <svg id="mapa" xmlns="http://www.w3.org/2000/svg" role="img"></svg>
+          <p class="lienzo__nota" id="nota-orientacion"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <p>
+        Datos del directorio y del emplazamiento transcritos de los planos publicados por el
+        <a
+          href="https://www.comunidad.madrid/hospital/ramonycajal/guia-paciente/plano-general-situacion-0"
+          rel="noreferrer"
+          >Hospital Universitario Ramón y Cajal</a
+        >
+        (Comunidad de Madrid). Geometría del recinto © colaboradores de
+        <a href="https://www.openstreetmap.org/copyright" rel="noreferrer">OpenStreetMap</a>, ODbL
+        1.0. El esquema de planta reproduce la topología y las proporciones del plano oficial: no es
+        un plano de proyecto ni sirve para uso técnico.
+      </p>
+    </footer>
+
+    <script src="datos.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

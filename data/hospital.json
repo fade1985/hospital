@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "nombre": "Hospital Universitario Ramón y Cajal",
+    "titularidad": "Servicio Madrileño de Salud (SERMAS) - Comunidad de Madrid",
+    "direccion": "Carretera de Colmenar Viejo, km 9,100 / Calle de Antoniorrobles, 50. 28034 Madrid",
+    "inauguracion": 1977,
+    "arquitectos": [
+      "Martín José Marcide Odriozola (proyecto, 1972-1973)",
+      "Rafael de Aburto Renobales (obra, 1972-1976)",
+      "Federico del Cerro Espinós (obra, 1972-1976)",
+      "Fernando Flórez Plaza (obra, 1972-1976)"
+    ],
+    "superficie_construida_m2": 249706,
+    "coordenadas": { "lat": 40.48731, "lon": -3.69387 },
+    "revision_datos": "2026-08",
+    "fuentes": [
+      {
+        "id": "plano-situacion",
+        "titulo": "Plano general de situación - Guía del paciente",
+        "url": "https://www.comunidad.madrid/hospital/ramonycajal/guia-paciente/plano-general-situacion-0",
+        "uso": "Plano de emplazamiento, leyenda de señalética por sectores y esquemas de las tres zonas"
+      },
+      {
+        "id": "memoria-2024",
+        "titulo": "Memoria 2024 del Hospital Universitario Ramón y Cajal",
+        "url": "https://www.comunidad.madrid/hospital/ramonycajal/sites/ramonycajal/files/2026-01/memoria_2024_hu_ryc.pdf",
+        "uso": "Número de plantas, división en zonas y bloques A/B/C, comunicaciones anterior y posterior, edificios anexos"
+      },
+      {
+        "id": "memoria-2019",
+        "titulo": "Memoria 2019 del Hospital Universitario Ramón y Cajal",
+        "url": "https://www.comunidad.madrid/hospital/ramonycajal/file/4991/download?token=Gi8s3Uo6",
+        "uso": "Descripción del centro, ubicación de UCI y quirófanos en los controles C, listado de edificios anexos"
+      },
+      {
+        "id": "osm",
+        "titulo": "OpenStreetMap - recinto hospitalario",
+        "url": "https://www.openstreetmap.org/relation/13037178",
+        "uso": "Geometría georreferenciada del edificio principal, anexos, viales y apeadero"
+      }
+    ]
+  },
+
+  "orientacion": {
+    "nota": "Los planos oficiales del hospital se dibujan desde el punto de vista de quien entra por la fachada principal: el norte queda hacia abajo. Por eso el sector Izquierda cae al este real y el sector Derecha al oeste real.",
+    "azimut_fachada_principal_grados": 340,
+    "vista_planta": "norte hacia abajo (igual que la señalética del hospital)",
+    "vista_recinto": "norte hacia arriba (georreferenciada)",
+    "confianza": "media-alta: deducida contrastando el plano oficial con la posición real en OpenStreetMap del apeadero de Cercanías (al norte del edificio) y del Pabellón Docente (al noroeste), descrito en las memorias como situado 'a la derecha de la fachada principal'."
+  },
+
+  "zonas": [
+    {
+      "id": "izquierda",
+      "nombre": "Izquierda",
+      "color_senaletica": "verde",
+      "color": "#2f9e6f",
+      "color_suave": "#d9efe4",
+      "lado_real": "este"
+    },
+    {
+      "id": "centro",
+      "nombre": "Centro",
+      "color_senaletica": "amarillo",
+      "color": "#e0bf2d",
+      "color_suave": "#f7efc9",
+      "lado_real": "centro"
+    },
+    {
+      "id": "derecha",
+      "nombre": "Derecha",
+      "color_senaletica": "azul",
+      "color": "#3f9ed4",
+      "color_suave": "#d7ebf7",
+      "lado_real": "oeste"
+    }
+  ],
+
+  "bloques": [
+    { "id": "A", "nombre": "Bloque A", "descripcion": "Franja más próxima a la fachada principal" },
+    { "id": "B", "nombre": "Bloque B", "descripcion": "Franja intermedia" },
+    { "id": "C", "nombre": "Bloque C", "descripcion": "Franja del fondo del edificio; concentra UCI y quirófanos" }
+  ],
+
+  "plantas": [
+    { "id": "11", "nombre": "Planta 11", "nivel": 11, "tipo": "altura" },
+    { "id": "10", "nombre": "Planta 10", "nivel": 10, "tipo": "altura" },
+    { "id": "9", "nombre": "Planta 9", "nivel": 9, "tipo": "altura" },
+    { "id": "8", "nombre": "Planta 8", "nivel": 8, "tipo": "altura" },
+    { "id": "7", "nombre": "Planta 7", "nivel": 7, "tipo": "altura" },
+    { "id": "6", "nombre": "Planta 6", "nivel": 6, "tipo": "altura" },
+    { "id": "5", "nombre": "Planta 5", "nivel": 5, "tipo": "altura" },
+    { "id": "4", "nombre": "Planta 4", "nivel": 4, "tipo": "altura" },
+    { "id": "3", "nombre": "Planta 3", "nivel": 3, "tipo": "altura" },
+    { "id": "2", "nombre": "Planta 2", "nivel": 2, "tipo": "altura" },
+    { "id": "1", "nombre": "Planta 1", "nivel": 1, "tipo": "altura" },
+    { "id": "0", "nombre": "Planta 0 (baja)", "nivel": 0, "tipo": "baja" },
+    { "id": "S1", "nombre": "Sótano -1", "nivel": -1, "tipo": "sotano" },
+    { "id": "S2", "nombre": "Sótano -2", "nivel": -2, "tipo": "sotano" },
+    { "id": "S3", "nombre": "Sótano -3", "nivel": -3, "tipo": "sotano" },
+    { "id": "S4", "nombre": "Sótano -4", "nivel": -4, "tipo": "sotano" },
+    { "id": "S5", "nombre": "Sótano -5", "nivel": -5, "tipo": "sotano" }
+  ],
+
+  "circulaciones": [
+    {
+      "id": "anterior",
+      "nombre": "Comunicación anterior",
+      "descripcion": "Las tres zonas están comunicadas entre sí por la parte anterior del edificio en todas las plantas.",
+      "plantas": "todas",
+      "fuente": "memoria-2024"
+    },
+    {
+      "id": "posterior",
+      "nombre": "Comunicación posterior",
+      "descripcion": "Existe además comunicación por la parte posterior desde el sótano -5 hasta la planta 2.",
+      "plantas": ["S5", "S4", "S3", "S2", "S1", "0", "1", "2"],
+      "fuente": "memoria-2024"
+    },
+    {
+      "id": "escalera-mecanica-consultas",
+      "nombre": "Escalera mecánica a Consultas Externas",
+      "descripcion": "Escalera mecánica con acceso directo desde la planta baja al área de consultas externas del sótano -2, con entrada propia en la fachada principal.",
+      "plantas": ["0", "S1", "S2"],
+      "fuente": "plano-situacion"
+    }
+  ],
+
+  "edificios_anexos": {
+    "nota": "OpenStreetMap no cartografía por separado Urgencias, Resonancia Magnética ni los pabellones menores: quedan dentro de la huella única del edificio principal. Por eso el visor no los dibuja como polígonos y se listan aquí con la posición que les asignan los documentos oficiales. La columna 'posición real' traduce la del plano oficial, que está dibujado con el norte hacia abajo.",
+    "listado": [
+      {
+        "id": "urgencias",
+        "nombre": "Urgencias",
+        "posicion_plano": "parte posterior del edificio principal",
+        "posicion_real": "al sur del edificio principal",
+        "detalle": "Conectado con el edificio principal. La atención de urgencias figura además en el sótano -3 de la zona Centro.",
+        "fuente": "plano-situacion"
+      },
+      {
+        "id": "resonancia",
+        "nombre": "Resonancia Magnética",
+        "posicion_plano": "parte posterior del hospital",
+        "posicion_real": "al sur del edificio principal",
+        "detalle": "Resonancia Magnética aparece también en el sótano -4 de la zona Izquierda.",
+        "fuente": "memoria-2019"
+      },
+      {
+        "id": "consultas-externas",
+        "nombre": "Consultas Externas y Pabellón Docente",
+        "posicion_plano": "a la derecha de la fachada principal",
+        "posicion_real": "al noroeste, cartografiado en OpenStreetMap",
+        "detalle": "Comunicado con el edificio principal por túneles y espacios abiertos. Incluye Dietética, Nutrición y Rehabilitación Cardíaca.",
+        "fuente": "memoria-2019"
+      },
+      {
+        "id": "rehabilitacion",
+        "nombre": "Rehabilitación",
+        "posicion_plano": "ala lateral del extremo del sector Izquierda",
+        "posicion_real": "extremo este del edificio principal",
+        "detalle": "Rehabilitación figura también en el sótano -2 de la zona Izquierda.",
+        "fuente": "plano-situacion"
+      },
+      {
+        "id": "banco-sangre",
+        "nombre": "Banco de Sangre",
+        "posicion_plano": "junto al sector Izquierda",
+        "posicion_real": "flanco este del edificio principal",
+        "detalle": "Aparece también en el sótano -3 de la zona Izquierda.",
+        "fuente": "plano-situacion"
+      },
+      {
+        "id": "velatorios",
+        "nombre": "Velatorios",
+        "posicion_plano": "lateral del sector Izquierda",
+        "posicion_real": "flanco este del edificio principal",
+        "detalle": "Aparecen también en el sótano -3 de la zona Izquierda.",
+        "fuente": "plano-situacion"
+      },
+      {
+        "id": "central-termica",
+        "nombre": "Central telefónica y sala de máquinas",
+        "posicion_plano": "a la izquierda del edificio principal",
+        "posicion_real": "al este, unos 190 m del edificio principal",
+        "detalle": "Coincide con los dos edificios sin nombre que OpenStreetMap sitúa al este del recinto.",
+        "fuente": "memoria-2019"
+      },
+      {
+        "id": "apeadero",
+        "nombre": "Apeadero de Cercanías Ramón y Cajal",
+        "posicion_plano": "enfrente de la parte anterior del edificio",
+        "posicion_real": "al norte, cartografiado en OpenStreetMap",
+        "detalle": "Línea C-4 de Cercanías Madrid, código de estación 97201.",
+        "fuente": "memoria-2019"
+      }
+    ]
+  },
+
+  "geometria_planta": {
+    "descripcion": "Parámetros del esquema de planta tipo. La planta se genera como un abanico de bandas radiales alrededor de un punto de fuga situado por delante de la fachada principal, que es la forma en la que se organiza el edificio en los planos oficiales. Las unidades son unidades SVG y guardan la proporción del plano oficial, no son cotas del proyecto.",
+    "confianza": "esquemática: reproduce la topología y las proporciones del plano oficial, no la geometría de un plano de proyecto",
+    "pivote": { "x": 0, "y": 470 },
+    "apertura_grados": 50,
+    "radios": {
+      "fachada": [148, 192],
+      "conector_anterior": [192, 208],
+      "A": [208, 270],
+      "B": [270, 332],
+      "C": [332, 378],
+      "conector_posterior": [378, 394],
+      "urgencias": [394, 456],
+      "resonancia": [452, 498],
+      "brazos": [214, 306]
+    },
+    "sectores_u": {
+      "izquierda": [-0.72, -0.29],
+      "centro": [-0.29, 0.29],
+      "derecha": [0.29, 0.72]
+    },
+    "espinas_u": {
+      "izquierda": [-0.63, -0.47],
+      "centro": [-0.13, 0.13],
+      "derecha": [0.49, 0.65]
+    },
+    "brazos_u": { "izquierda": [-1.0, -0.72], "derecha": [0.72, 1.0] },
+    "fachada_u": [-0.32, 0.5],
+    "urgencias_u": [-0.45, 0.55],
+    "resonancia_u": [-0.44, -0.08]
+  }
+}
